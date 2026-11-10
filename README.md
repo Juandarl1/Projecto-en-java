@@ -29,7 +29,15 @@ La aplicación estará disponible en `http://localhost:5173`.
 
 Los registros nuevos incluyen una propiedad `record` con nombres de columnas en
 `snake_case`, lista para conectarse posteriormente a Supabase. La transformación
-está centralizada en `src/lib/invoice.js`.
+está centralizada en `src/infrastructure/invoiceRecordMapper.js`.
+
+## Arquitectura por capas
+
+- `src/domain`: entidades y reglas de negocio de las facturas.
+- `src/application`: casos de uso para guardar, filtrar y actualizar facturas.
+- `src/infrastructure`: generación de PDF, límite de persistencia y mapeo preparado para Supabase.
+- `src/presentation`: componentes y páginas React.
+- `src/shared`: formateadores reutilizables.
 
 ## Acceso de demostración
 
