@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import Logo from './Logo'
 
+// Presenta el acceso de demostración y notifica al contenedor cuando las credenciales son válidas.
 export default function Login({ onLogin }) {
   const [username, setUsername] = useState('admin')
   const [password, setPassword] = useState('1234')
   const [error, setError] = useState('')
 
+  // Valida las credenciales locales del prototipo sin consultar todavía un servicio externo.
   function submit(event) {
     event.preventDefault()
     if (username === 'admin' && password === '1234') onLogin()

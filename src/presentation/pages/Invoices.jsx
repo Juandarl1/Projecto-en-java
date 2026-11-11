@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { filterInvoices } from '../../application/invoiceService'
 import { formatDate, money } from '../../shared/formatters'
 
+// Página de historial: permite buscar, filtrar, editar, pagar y descargar facturas.
 export default function Invoices({ invoices, setView, onEdit, onTogglePaid, onPrint }) {
   const [query, setQuery] = useState('')
   const [statusFilter, setStatusFilter] = useState('all')

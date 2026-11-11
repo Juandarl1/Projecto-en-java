@@ -3,14 +3,17 @@ import { calculateInvoiceTotal, initialInvoice, normalizeInvoice } from '../../d
 import Field from '../components/Field'
 import { money } from '../../shared/formatters'
 
+// Formulario compartido para crear una factura nueva o editar una existente.
 export default function InvoiceForm({ invoiceToEdit, onSave, onCancel }) {
   const [invoice, setInvoice] = useState(() => normalizeInvoice(invoiceToEdit || initialInvoice))
   const total = calculateInvoiceTotal(invoice.items)
   const update = (key, value) => setInvoice((current) => ({ ...current, [key]: value }))
   const updateItem = (index, key, value) => setInvoice((current) => ({ ...current, items: current.items.map((item, itemIndex) => itemIndex === index ? { ...item, [key]: value } : item) }))
+  // Agrega una línea de servicio o repuesto al detalle de la factura.
   const addItem = (type) => setInvoice((current) => ({ ...current, items: [...current.items, { type, description: '', quantity: 1, unitPrice: 0 }] }))
   const removeItem = (index) => setInvoice((current) => ({ ...current, items: current.items.filter((_, itemIndex) => itemIndex !== index) }))
 
+  // Calcula el total final y entrega la factura al caso de uso superior.
   function submit(event) {
     event.preventDefault()
     onSave({ ...invoice, total, status: invoice.status || 'Pendiente' })
