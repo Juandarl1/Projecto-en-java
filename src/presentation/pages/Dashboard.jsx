@@ -1,6 +1,7 @@
 import { formatDate, money } from '../../shared/formatters'
 import Stat from '../components/Stat'
 
+// Página inicial con indicadores y accesos rápidos a las acciones frecuentes.
 export default function Dashboard({ invoices, setView, stats }) {
   return <div className="page"><div className="page-heading"><div><p className="eyebrow">Martes, 03 de noviembre</p><h1>Tu facturación, en orden <span>✦</span></h1><p className="muted">Registra cada reparación y encuentra tus facturas cuando las necesites.</p></div><button className="primary-button" onClick={() => setView('nueva')}>+ Nueva factura</button></div>
     <div className="stats-grid"><Stat title="Facturas registradas" value={stats.count} trend="Lista para consultar" icon="▤" /><Stat title="Facturado en total" value={money(stats.total)} trend="Desde que comenzaste" icon="$" /><Stat title="Servicios realizados" value={stats.count} trend="Reparaciones documentadas" icon="✓" /><Stat title="Pendientes de pago" value={stats.pending} trend="Para hacer seguimiento" icon="◌" /></div>

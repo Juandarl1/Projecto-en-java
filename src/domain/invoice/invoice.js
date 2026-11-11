@@ -1,3 +1,4 @@
+// Valores iniciales usados por el formulario de creación de facturas.
 export const initialInvoice = {
   invoiceNumber: 'FAC-0001',
   issueDate: '2026-11-03',
@@ -15,6 +16,7 @@ export const initialInvoice = {
   items: [{ type: 'service', description: '', quantity: 1, unitPrice: 0 }],
 }
 
+// Datos de ejemplo para que el prototipo tenga contenido al iniciar.
 export const demoInvoices = [
   {
     id: '550e8400-e29b-41d4-a716-446655440001',
@@ -44,6 +46,7 @@ export function calculateInvoiceTotal(items = []) {
   return items.reduce((sum, item) => sum + (Number(item.quantity) || 0) * (Number(item.unitPrice) || 0), 0)
 }
 
+// Completa campos faltantes y copia las líneas para trabajar con una estructura segura.
 export function normalizeInvoice(invoice) {
   return {
     ...initialInvoice,
@@ -54,6 +57,7 @@ export function normalizeInvoice(invoice) {
   }
 }
 
+// Crea una factura válida, asignando UUID y total cuando sea necesario.
 export function createInvoice(invoice) {
   const normalized = normalizeInvoice(invoice)
   return {
@@ -64,6 +68,7 @@ export function createInvoice(invoice) {
   }
 }
 
+// Cambia una factura entre los estados Pendiente y Pagada.
 export function toggleInvoicePayment(invoice) {
   return createInvoice({
     ...invoice,

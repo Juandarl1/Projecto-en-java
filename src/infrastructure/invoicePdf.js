@@ -1,6 +1,7 @@
 import { jsPDF } from 'jspdf'
 import { money } from '../shared/formatters'
 
+// Convierte una factura en un PDF descargable para entregar al cliente o archivarlo.
 export function downloadInvoicePdf(invoice) {
   const pdf = new jsPDF()
   const pageWidth = pdf.internal.pageSize.getWidth()

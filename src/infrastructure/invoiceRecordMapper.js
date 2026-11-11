@@ -1,3 +1,4 @@
+// Adapta el modelo del dominio a nombres snake_case compatibles con Supabase.
 export function toInvoiceRecord(invoice) {
   return {
     id: invoice.id,
