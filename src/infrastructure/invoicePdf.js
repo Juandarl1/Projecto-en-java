@@ -12,14 +12,14 @@ export function downloadInvoicePdf(invoice) {
   pdf.setFontSize(22)
   pdf.text('FacturApp', 18, 17)
   pdf.setFontSize(10)
-  pdf.text('FACTURA DE SERVICIO TÉCNICO', 18, 28)
-  pdf.text(invoice.invoiceNumber || 'Sin número', pageWidth - 18, 17, { align: 'right' })
+  pdf.text('ORDEN DE SERVICIO TÉCNICO', 18, 28)
+  pdf.text(invoice.invoiceNumber || 'BORRADOR', pageWidth - 18, 17, { align: 'right' })
   pdf.setFontSize(9)
   pdf.text(`ID: ${invoice.id}`, pageWidth - 18, 28, { align: 'right' })
   y = 54
   pdf.setTextColor(35, 62, 81)
   pdf.setFontSize(11)
-  pdf.text('Datos de la factura', 18, y)
+  pdf.text('Datos de la orden', 18, y)
   pdf.setFontSize(9)
   pdf.setTextColor(90, 110, 120)
   pdf.text(`Fecha de emisión: ${invoice.issueDate}`, 18, y + 9)
@@ -85,5 +85,5 @@ export function downloadInvoicePdf(invoice) {
     pdf.setTextColor(90, 110, 120)
     pdf.text(pdf.splitTextToSize(invoice.notes, pageWidth - 36), 18, y + 19)
   }
-  pdf.save(`${invoice.invoiceNumber || 'factura'}-${invoice.id}.pdf`)
+  pdf.save(`${invoice.invoiceNumber || 'orden-servicio'}-${invoice.id}.pdf`)
 }
