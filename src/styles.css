@@ -7,6 +7,7 @@
 @media(max-width:700px){.invoice-filters{align-items:flex-start;flex-wrap:wrap}.invoice-filters .result-count{width:100%}}
 
 .mobile-nav{display:none}
+.mobile-logout{display:none}
 .invoice-form,.invoice-form .form-section,.field-grid,.field,.line-items{min-width:0;max-width:100%}
 .invoice-form .form-section{box-sizing:border-box;width:100%}
 .field-grid{width:100%}
@@ -16,6 +17,7 @@
   .sidebar{display:none}
   .topbar{justify-content:space-between}
   .topbar>.mobile-logo{display:block}
+  .mobile-logout{display:inline-grid;place-items:center;width:44px;height:44px;color:#71828d;font-size:18px}
   .content{width:100%}
   .mobile-nav{position:fixed;z-index:20;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(3,1fr);min-height:68px;border-top:1px solid #dde6ea;background:#fff;box-shadow:0 -6px 18px rgba(18,45,65,.08)}
   .mobile-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#71828d;font-size:18px}
