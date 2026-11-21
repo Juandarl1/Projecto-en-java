@@ -5,3 +5,65 @@
 
 .invoice-number small{max-width:230px;color:#9aa8ae;font-size:9px;letter-spacing:0;text-transform:none;text-align:right;overflow-wrap:anywhere}.invoice-link,.reference-link{padding:0;color:#2d6684;font-size:12px;font-weight:700;text-align:left}.invoice-link:hover,.reference-link:hover{color:#c38929;text-decoration:underline}.status-button{border:0}.status-button:hover{filter:brightness(.96);transform:translateY(-1px)}.invoice-actions{display:flex;gap:8px}.invoice-actions button{padding:6px 8px;border:1px solid #dfe6ea;border-radius:5px;color:#617782;font-size:10px}.invoice-actions button:hover{border-color:#d29b43;color:#b27d2d;background:#fffaf1}.invoices-panel table{min-width:880px}.invoice-filters{display:flex;align-items:center;gap:8px}.filter-tag{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #dfe6ea;border-radius:20px;color:#74858e;font-size:10px;font-weight:700}.filter-tag span{display:grid;place-items:center;min-width:18px;height:18px;border-radius:10px;background:#eef2f4;color:#60747e;font-size:9px}.filter-tag.active{border-color:#bdd0d9;background:#edf5f8;color:#2d6684}.filter-tag.paid-filter{border-color:#bde1cf;color:#329068}.filter-tag.paid-filter span{background:#dff3e8;color:#329068}.filter-tag.paid-filter.active{background:#e3f5ec}
 @media(max-width:700px){.invoice-filters{align-items:flex-start;flex-wrap:wrap}.invoice-filters .result-count{width:100%}}
+
+.mobile-nav{display:none}
+.invoice-form,.invoice-form .form-section,.field-grid,.field,.line-items{min-width:0;max-width:100%}
+.invoice-form .form-section{box-sizing:border-box;width:100%}
+.field-grid{width:100%}
+.field input,.field select,.field textarea{max-width:100%}
+
+@media(max-width:900px){
+  .sidebar{display:none}
+  .topbar{justify-content:space-between}
+  .topbar>.mobile-logo{display:block}
+  .content{width:100%}
+  .mobile-nav{position:fixed;z-index:20;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(3,1fr);min-height:68px;border-top:1px solid #dde6ea;background:#fff;box-shadow:0 -6px 18px rgba(18,45,65,.08)}
+  .mobile-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#71828d;font-size:18px}
+  .mobile-nav button small{font-size:9px;font-weight:700}
+  .mobile-nav button.active{color:#b27d2d;background:#fffaf1}
+  .page{padding-bottom:96px}
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dashboard-grid{grid-template-columns:1fr}
+  .table-toolbar{flex-wrap:wrap}
+  .search-box{max-width:none;flex:1 1 260px}
+  .invoice-filters{flex-wrap:wrap}
+  .invoices-panel{overflow-x:auto}
+  .invoices-panel table{min-width:880px}
+  .invoices-panel th:last-child,.invoices-panel td:last-child{position:sticky;right:0;z-index:2;background:#fff;box-shadow:-8px 0 12px rgba(18,45,65,.04)}
+  .field-grid.three,.field-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .line-items{padding-bottom:8px}
+  .line-header,.line-item{min-width:730px}
+}
+
+@media(max-width:600px){
+  .topbar{height:64px;padding:0 16px}
+  .topbar-actions{gap:14px}
+  .topbar-date{display:none}
+  .page{padding:24px 16px 96px}
+  .page-heading{gap:16px}
+  .page-heading h1{font-size:27px}
+  .page-heading>.primary-button,.form-actions .primary-button,.form-actions .secondary-button{width:100%}
+  .stats-grid{gap:10px}
+  .stat-card{padding:16px 14px}
+  .stat-card>strong{font-size:19px;overflow-wrap:anywhere}
+  .stat-icon{top:14px;right:12px}
+  .dashboard-grid{gap:16px}
+  .panel,.invoice-form .form-section{padding:18px}
+  .activity-row{gap:8px}
+  .activity-row .status{display:none}
+  .amount{min-width:58px}
+  .field-grid.three,.field-grid.two{grid-template-columns:1fr}
+  .invoice-number{align-items:flex-start;width:100%}
+  .invoice-number small{text-align:left}
+  .section-title{gap:10px}
+  .line-actions{gap:8px}
+  .line-actions .text-button{min-height:44px;text-align:left}
+  .total-box{gap:12px}
+  .form-actions{flex-direction:column-reverse}
+  .table-toolbar{gap:12px}
+  .invoice-filters{width:100%}
+  .invoice-filters .filter-tag{flex:1;justify-content:center}
+  .invoices-panel table{min-width:880px}
+  .invoices-panel th,.invoices-panel td{padding-left:8px;padding-right:8px}
+  .invoice-actions button{min-height:36px}
+}
