@@ -23,3 +23,9 @@
 - No agregues credenciales, tokens, archivos `.env` ni configuraciones de servicios que aún no estén implementados.
 - Después de modificar el proyecto, ejecuta `npm run build` y corrige cualquier error de compilación.
 - No modifiques la implementación Java de `Proyecto/` al trabajar en la aplicación React, salvo que se solicite expresamente.
+
+## Alcance confirmado
+- La aplicación está destinada a un solo técnico autenticado; no crear cuentas para empleados ni módulos multiusuario.
+- El documento principal es la orden de servicio, no una factura electrónica.
+- No añadir tablas, funcionalidades, dependencias o cambios ajenos a una tarea sin aprobación explícita.
+- La numeración real de órdenes se generará al finalizar en PostgreSQL; el frontend actual sigue siendo demostrativo.

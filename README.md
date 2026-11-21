@@ -41,8 +41,7 @@ está centralizada en `src/infrastructure/invoiceRecordMapper.js`.
 
 ## Acceso de demostración
 
-- Usuario: `admin`
-- Contraseña: `1234`
+- La vista actual es demostrativa y no requiere credenciales reales.
 
 La carpeta `Proyecto/` conserva la implementación original en Java como referencia
 durante la migración.
